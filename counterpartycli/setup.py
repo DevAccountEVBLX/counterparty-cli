@@ -71,12 +71,12 @@ def extract_bitcoincore_config():
 
     # Figure out the path to the bitcoin.conf file
     if platform.system() == 'Darwin':
-        btc_conf_file = os.path.expanduser('~/Library/Application Support/Bitcoin/')
+        btc_conf_file = os.path.expanduser('~/Library/Application Support/XEP/')
     elif platform.system() == 'Windows':
-        btc_conf_file = os.path.join(os.environ['APPDATA'], 'Bitcoin')
+        btc_conf_file = os.path.join(os.environ['APPDATA'], 'XEP')
     else:
-        btc_conf_file = os.path.expanduser('~/.bitcoin')
-    btc_conf_file = os.path.join(btc_conf_file, 'bitcoin.conf')
+        btc_conf_file = os.path.expanduser('~/.xep')
+    btc_conf_file = os.path.join(btc_conf_file, 'xep.conf')
 
     # Extract contents of bitcoin.conf to build service_url
     if os.path.exists(btc_conf_file):
